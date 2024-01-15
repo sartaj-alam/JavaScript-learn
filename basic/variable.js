@@ -12,3 +12,20 @@ accountCity = "RajDhanwar"
 
 console.log(accountId);
 console.table([accountId, accountEmail, accountPassword, accountCity,accountState]);
+
+
+
+// Data Types 
+//  number => 2 to power  53
+//  bigInt
+//  string => ""
+//  boolean => true/ false
+//  null => standalone value / also a object
+//  undefined 
+//  symbol
+
+// object
+
+console.log(typeof("Simran"));   //  => string
+console.log(typeof(null));       //  => object
+console.log(typeof(undefined));  //  => undefined
