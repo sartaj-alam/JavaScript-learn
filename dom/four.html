@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM, Final</title>
+</head>
+<body style=" background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+
+  //  ============ Create element using funcion ============
+
+        function addLanguage ( langName) {
+            const li = document.createElement('li')
+            li.innerHTML = `${langName}`
+            document.querySelector('.language').appendChild(li)
+        }
+        addLanguage("Python")    // ===> This function is not optimise format,so we do not used in large project.
+        addLanguage("C++")
+        addLanguage("Angular")
+
+        function addOptiLanguage(langName){
+            const li = document.createElement("li")
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)
+        }
+         addOptiLanguage("TypeScript")   // ===> This function is optimised, so we use this in large project.
+
+  //  ============== Edit HTML Element ===========
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"    // ===> This is not optimised format
+    const newLi = document.createElement('li')
+    newLi.textContent = 'Mojo'
+    secondLang.replaceWith(newLi)
+
+  //  ============== Remove HTML Element ===========
+  const removeEle = document.querySelector("li:last-child")
+  removeEle.remove()
+    </script>
+</body>
+</html>
