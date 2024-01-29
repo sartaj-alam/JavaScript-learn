@@ -16,6 +16,7 @@
     const xhr = new XMLHttpRequest();
     xhr.open('GET',requestUrl);
     xhr.onreadystatechange = function(){
+        
         console.log(xhr.readyState);
         if(xhr.readyState === 4){        // ==> line 20 - 24 gives number of followers 
             const data = JSON.parse(this.responseText)
