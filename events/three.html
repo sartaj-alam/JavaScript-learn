@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur JavaScript</h1>
+    <button id="start"> Start</button>
+    <button id="stop"> Stop</button>
+    
+</body>
+<script>
+// ======= Overview of setInterval =============
+    // setInterval(function(){
+    //     console.log("Sartaj");
+    // },1000)
+
+    // const interval = function(str){
+    //     console.log(str, Date.now());
+    // }
+
+    // setInterval(interval, 1000, "Simran")
+// ============= Event on button =========
+let value = 0;
+
+
+let interval = function(){
+    
+}
+
+document.querySelector("#start").addEventListener('click',function(){
+     interval = setInterval(function(){
+
+        if(value === 0){
+        document.querySelector("h1").innerHTML = "Love You Sartaj";
+        value = 1;
+    }
+    else if(value === 1){
+        document.querySelector('h1').innerHTML = 'Chai aur JavaScript'
+        value = 0;
+    }
+     }, 500)
+    
+})
+
+document.querySelector('#stop').addEventListener('click', function(){
+    clearInterval(interval);
+})
+</script>
+</html>

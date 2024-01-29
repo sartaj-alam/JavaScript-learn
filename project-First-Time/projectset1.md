@@ -188,3 +188,94 @@ function newGame(){
 }
 
 ```
+
+## project 5 ( Keyboard Linsteining)
+```javascript
+
+console.log('Project 5');
+const insert = document.querySelector('#insert');
+window.addEventListener('keydown', (e) => {
+
+  insert.innerHTML = `
+  
+  <div class = 'color'>
+  <table>
+  <tr>
+  <th>Key</th>
+  <th>KeyCode</th>
+  <th>Code</th>
+  </tr>
+  <tr>
+  <td>${e.key === ' ' ? 'Space' : e.key}</td>
+  <td>${e.keyCode}</td>
+  <td>${e.code}</td>
+  `
+})
+
+```
+
+
+## project 6(Unlimited Color)
+```javascript
+// // ============ Our Code =============
+// let interval;
+
+// // ============== Code for Start ============= 
+// document.querySelector('#start').addEventListener('click', function(){
+
+// interval = setInterval(function(){
+
+//   let colorId = '#';
+//  let colorValue = Math.floor(Math.random() * 10000 + 1);
+//  let color = colorId.concat(colorValue);
+//  document.querySelector('body').style.backgroundColor = color;
+// console.log(colorValue)
+// },1000);
+
+// })
+// // =========== Code for Stopped ============
+// document.querySelector('#stop').addEventListener('click', function(){
+
+//   console.log('Stopped');
+//   clearInterval(interval);
+// })
+
+
+// ========= Code From Chai aur Code ============
+
+// generate a random color
+
+let intervalId;
+const randomColor = function() {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for(let i = 0; i < 6; i++){
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  // console.log(color);
+  return color;
+};
+
+const startChangingColor = function(){
+
+  if(!intervalId){
+  intervalId = setInterval(changeBgColor, 1000)
+  }
+
+  function changeBgColor  (){
+  document.body.style.backgroundColor = randomColor();
+  }
+}
+
+const stopChangingColor = function(){
+  console.log("Stopped");
+  clearInterval(intervalId);
+  intervalId = null;
+}
+
+document.querySelector('#start').addEventListener('click', startChangingColor)
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor)
+
+```
+
